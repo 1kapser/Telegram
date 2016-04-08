@@ -1,0 +1,22 @@
+{
+    "name": "Telegram",
+    "description": "Telegram",
+    "license": "MIT",
+    "keywords": [
+        "Telegram",
+          ],
+    "support": {
+        "issues": "https://github.com/ 1kapser/Telegram",
+        "wiki": "https://github.com/ 1kapser/Telegram",
+        "source": "https://github.com/1kapser/Telegram"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*"
+    }
+}
