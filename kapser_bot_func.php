@@ -3,7 +3,7 @@
  * Telegram Bot access token и URL.
  */
 $access_token = '217117994:AAEC_vlWicWGVm0H973Z2XEjvevoInmy4cs';
-$api = 'https://api.telegram.org/kapser_bot' . $access_token;
+$api = 'https://api.telegram.org/bot' . $access_token;
 
 /**
  * Задаём основные переменные.
