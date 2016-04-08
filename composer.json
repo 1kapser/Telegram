@@ -17,9 +17,5 @@
         "issues": "https://github.com/1kapser/telegram/issues",
         "source": "https://github.com/1kapser/telegram"
     },
-    "
-    "suggest": {
-        "ext/pcntl": "Usage of signal handler"
-    },
     
 }
