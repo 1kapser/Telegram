@@ -1,5 +1,6 @@
-{
-    $bot->setWebHook(handler - https://kapser.herokuapp.com/);
+  $bot->setWebHook(handler - https://kapser.herokuapp.com/);
+  {
+  
     "name": "1kapser/Telegram",
     "description": "Telegram Bot",
     "keywords": [
