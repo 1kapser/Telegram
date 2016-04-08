@@ -6,8 +6,8 @@
         "Telegram",
           ],
     "support": {
-        "issues": "https://github.com/ 1kapser/Telegram",
-        "wiki": "https://github.com/ 1kapser/Telegram",
+        "issues": "https://github.com/1kapser/Telegram",
+        "wiki": "https://github.com/1kapser/Telegram",
         "source": "https://github.com/1kapser/Telegram"
     },
     "autoload": {
