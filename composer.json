@@ -1,20 +1,33 @@
 {
-    "name": "kapser",
-    "description": "Telegram",
-    "license": "MIT",
+    "name": "1kapser/Telegram",
+    "description": "Telegram Bot",
     "keywords": [
-        "Telegram",
-          ],
+        "telegram",
+        "bot",
+        "api"
+    ],
+    "homepage": "https://github.com/1kapser/Telegram",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Serg",
+        }
+    ],
     "support": {
-            "source": "https://github.com/1kapser/Telegram"
-    },
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
+        "issues": "https://github.com/zelenin/telegram/issues",
+        "source": "https://github.com/zelenin/telegram"
     },
     "require": {
-        "php": ">=5.5",
-        "ext-curl": "*"
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "~6",
+        "amphp/amp": "~1.0"
+    },
+    "suggest": {
+        "ext/pcntl": "Usage of signal handler"
+    },
+    "autoload": {
+        "psr-4": {
+            "1kapser\\Telegram\\Bot\\": ""
+        }
     }
 }
