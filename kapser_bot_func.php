@@ -1,19 +1,12 @@
 <?php
-/**
- * Telegram Bot access token и URL.
- */
-$access_token = '217117994:AAEC_vlWicWGVm0H973Z2XEjvevoInmy4cs';
-$api = 'https://api.telegram.org/bot' . $access_token;
-$BOT_NAME = 'kapser_bot';
 
-/**
- * Задаём основные переменные.
- */
-$output = json_decode(file_get_contents('php://input'), TRUE);
-$chat_id = $output['message']['chat']['id'];
-$first_name = $output['message']['chat']['first_name'];
-$message = $output['message']['text'];
+$bot_id = 'AAEC_vlWicWGVm0H973Z2XEjvevoInmy4cs';
 
-function sendMessage($chat_id, Hello) {
-  
-}
+$chat_id ='217117994';
+
+$url = 'https://api.telegram.org/bot' . $bot_id .
+'/sendMessage?text='.urlencode($text).
+'&chat_id='.intval($chat_id);
+$result = file_get_contents($url);
+$result = json_decode($result, true);
+var_dump($result['result']); 
