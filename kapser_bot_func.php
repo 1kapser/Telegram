@@ -1,12 +1,12 @@
 <?php
 /**
- * Telegram Bot access token è URL.
+ * Telegram Bot access token Ã¨ URL.
  */
 $access_token = '217117994:AAEC_vlWicWGVm0H973Z2XEjvevoInmy4cs';
 $api = 'https://api.telegram.org/bot' . $access_token;
 
 /**
- * Çàäà¸ì îñíîâíûå ïåðåìåííûå.
+ * Ã‡Ã Ã¤Ã Â¸Ã¬ Ã®Ã±Ã­Ã®Ã¢Ã­Ã»Ã¥ Ã¯Ã¥Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã»Ã¥.
  */
 $output = json_decode(file_get_contents('php://input'), TRUE);
 $chat_id = $output['message']['chat']['id'];
@@ -14,56 +14,56 @@ $first_name = $output['message']['chat']['first_name'];
 $message = $output['message']['text'];
 
 /**
- * Emoji äëÿ ëó÷øåãî âèçóàëüíîãî îôîðìëåíèÿ.
+ * Emoji Ã¤Ã«Ã¿ Ã«Ã³Ã·Ã¸Ã¥Ã£Ã® Ã¢Ã¨Ã§Ã³Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã®Ã´Ã®Ã°Ã¬Ã«Ã¥Ã­Ã¨Ã¿.
  */
 $emoji = array(
-  'preload' => json_decode('"\uD83D\uDE03"'), // Óëûáî÷êà.
+  'preload' => json_decode('"\uD83D\uDE03"'), // Ã“Ã«Ã»Ã¡Ã®Ã·ÃªÃ .
   'weather' => array(
-    'clear' => json_decode('"\u2600"'), // Ñîëíöå.
-    'clouds' => json_decode('"\u2601"'), // Îáëàêà.
-    'rain' => json_decode('"\u2614"'), // Äîæäü.
-    'snow' => json_decode('"\u2744"'), // Ñíåã.
+    'clear' => json_decode('"\u2600"'), // Ã‘Ã®Ã«Ã­Ã¶Ã¥.
+    'clouds' => json_decode('"\u2601"'), // ÃŽÃ¡Ã«Ã ÃªÃ .
+    'rain' => json_decode('"\u2614"'), // Ã„Ã®Ã¦Ã¤Ã¼.
+    'snow' => json_decode('"\u2744"'), // Ã‘Ã­Ã¥Ã£.
   ),
 );
 
 /**
- * Ïîëó÷àåì êîìàíäû îò ïîëüçîâàòåëÿ.
+ * ÃÃ®Ã«Ã³Ã·Ã Ã¥Ã¬ ÃªÃ®Ã¬Ã Ã­Ã¤Ã» Ã®Ã² Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¥Ã«Ã¿.
  */
 switch($message) {
-  // API ïîãîäû ïðåäîñòàâëåíî OpenWeatherMap.
+  // API Ã¯Ã®Ã£Ã®Ã¤Ã» Ã¯Ã°Ã¥Ã¤Ã®Ã±Ã²Ã Ã¢Ã«Ã¥Ã­Ã® OpenWeatherMap.
   // @see http://openweathermap.org
   case '/pogoda':
-    // Îòïðàâëÿåì ïðèâåòñòâåííûé òåêñò.
-    $preload_text = 'Îäíó ñåêóíäó, ' . $first_name . ' ' . $emoji['preload'] . ' ß óòî÷íÿþ äëÿ âàñ ïîãîäó..';
+    // ÃŽÃ²Ã¯Ã°Ã Ã¢Ã«Ã¿Ã¥Ã¬ Ã¯Ã°Ã¨Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ã© Ã²Ã¥ÃªÃ±Ã².
+    $preload_text = 'ÃŽÃ¤Ã­Ã³ Ã±Ã¥ÃªÃ³Ã­Ã¤Ã³, ' . $first_name . ' ' . $emoji['preload'] . ' ÃŸ Ã³Ã²Ã®Ã·Ã­Ã¿Ã¾ Ã¤Ã«Ã¿ Ã¢Ã Ã± Ã¯Ã®Ã£Ã®Ã¤Ã³..';
     sendMessage($chat_id, $preload_text);
-    // App ID äëÿ OpenWeatherMap.
-    $appid = 'ÂÀØ_ID';
-    // ID äëÿ ãîðîäà/ðàéîíà/ìåñòíîñòè (åñòü âñå ãîðîäà ÐÔ).
-    $id = '500776'; // Äëÿ ïðèìåðà: Ïåòåðáóðã, ñåâåð ãîðîäà.
-    // Ïîëó÷àåì JSON-îòâåò îò OpenWeatherMap.
+    // App ID Ã¤Ã«Ã¿ OpenWeatherMap.
+    $appid = '500776';
+    // ID Ã¤Ã«Ã¿ Ã£Ã®Ã°Ã®Ã¤Ã /Ã°Ã Ã©Ã®Ã­Ã /Ã¬Ã¥Ã±Ã²Ã­Ã®Ã±Ã²Ã¨ (Ã¥Ã±Ã²Ã¼ Ã¢Ã±Ã¥ Ã£Ã®Ã°Ã®Ã¤Ã  ÃÃ”).
+    $id = '500776'; // Ã„Ã«Ã¿ Ã¯Ã°Ã¨Ã¬Ã¥Ã°Ã : ÃÃ¥Ã²Ã¥Ã°Ã¡Ã³Ã°Ã£, Ã±Ã¥Ã¢Ã¥Ã° Ã£Ã®Ã°Ã®Ã¤Ã .
+    // ÃÃ®Ã«Ã³Ã·Ã Ã¥Ã¬ JSON-Ã®Ã²Ã¢Ã¥Ã² Ã®Ã² OpenWeatherMap.
     $pogoda = json_decode(file_get_contents('http://api.openweathermap.org/data/2.5/weather?appid=' . $appid . '&id=' . $id . '&units=metric&lang=ru'), TRUE);
-    // Îïðåäåëÿåì òèï ïîãîäû èç îòâåòà è âûâîäèì ñîîòâåòñòâóþùèé Emoji.
+    // ÃŽÃ¯Ã°Ã¥Ã¤Ã¥Ã«Ã¿Ã¥Ã¬ Ã²Ã¨Ã¯ Ã¯Ã®Ã£Ã®Ã¤Ã» Ã¨Ã§ Ã®Ã²Ã¢Ã¥Ã²Ã  Ã¨ Ã¢Ã»Ã¢Ã®Ã¤Ã¨Ã¬ Ã±Ã®Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ã© Emoji.
     if ($pogoda['weather'][0]['main'] === 'Clear') { $weather_type = $emoji['weather']['clear'] . ' ' . $pogoda['weather'][0]['description']; }
     elseif ($pogoda['weather'][0]['main'] === 'Clouds') { $weather_type = $emoji['weather']['clouds'] . ' ' . $pogoda['weather'][0]['description']; }
     elseif ($pogoda['weather'][0]['main'] === 'Rain') { $weather_type = $emoji['weather']['rain'] . ' ' . $pogoda['weather'][0]['description']; }
     elseif ($pogoda['weather'][0]['main'] === 'Snow') { $weather_type = $emoji['weather']['snow'] . ' ' . $pogoda['weather'][0]['description']; }
     else $weather_type = $pogoda['weather'][0]['description'];
-    // Òåìïåðàòóðà âîçäóõà.
+    // Ã’Ã¥Ã¬Ã¯Ã¥Ã°Ã Ã²Ã³Ã°Ã  Ã¢Ã®Ã§Ã¤Ã³ÃµÃ .
     if ($pogoda['main']['temp'] > 0) { $temperature = '+' . sprintf("%d", $pogoda['main']['temp']); }
     else { $temperature = sprintf("%d", $pogoda['main']['temp']); }
-    // Íàïðàâëåíèå âåòðà.
-    if ($pogoda['wind']['deg'] >= 0 && $pogoda['wind']['deg'] <= 11.25) { $wind_direction = 'ñåâåðíûé'; }
-    elseif ($pogoda['wind']['deg'] > 11.25 && $pogoda['wind']['deg'] <= 78.75) { $wind_direction = 'ñåâåðî-âîñòî÷íûé, '; }
-    elseif ($pogoda['wind']['deg'] > 78.75 && $pogoda['wind']['deg'] <= 101.25) { $wind_direction = 'âîñòî÷íûé, '; }
-    elseif ($pogoda['wind']['deg'] > 101.25 && $pogoda['wind']['deg'] <= 168.75) { $wind_direction = 'þãî-âîñòî÷íûé, '; }
-    elseif ($pogoda['wind']['deg'] > 168.75 && $pogoda['wind']['deg'] <= 191.25) { $wind_direction = 'þæíûé, '; }
-    elseif ($pogoda['wind']['deg'] > 191.25 && $pogoda['wind']['deg'] <= 258.75) { $wind_direction = 'þãî-çàïàäíûé, '; }
-    elseif ($pogoda['wind']['deg'] > 258.75 && $pogoda['wind']['deg'] <= 281.25) { $wind_direction = 'çàïàäíûé, '; }
-    elseif ($pogoda['wind']['deg'] > 281.25 && $pogoda['wind']['deg'] <= 348.75) { $wind_direction = 'ñåâåðî-çàïàäíûé, '; }
+    // ÃÃ Ã¯Ã°Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã¢Ã¥Ã²Ã°Ã .
+    if ($pogoda['wind']['deg'] >= 0 && $pogoda['wind']['deg'] <= 11.25) { $wind_direction = 'Ã±Ã¥Ã¢Ã¥Ã°Ã­Ã»Ã©'; }
+    elseif ($pogoda['wind']['deg'] > 11.25 && $pogoda['wind']['deg'] <= 78.75) { $wind_direction = 'Ã±Ã¥Ã¢Ã¥Ã°Ã®-Ã¢Ã®Ã±Ã²Ã®Ã·Ã­Ã»Ã©, '; }
+    elseif ($pogoda['wind']['deg'] > 78.75 && $pogoda['wind']['deg'] <= 101.25) { $wind_direction = 'Ã¢Ã®Ã±Ã²Ã®Ã·Ã­Ã»Ã©, '; }
+    elseif ($pogoda['wind']['deg'] > 101.25 && $pogoda['wind']['deg'] <= 168.75) { $wind_direction = 'Ã¾Ã£Ã®-Ã¢Ã®Ã±Ã²Ã®Ã·Ã­Ã»Ã©, '; }
+    elseif ($pogoda['wind']['deg'] > 168.75 && $pogoda['wind']['deg'] <= 191.25) { $wind_direction = 'Ã¾Ã¦Ã­Ã»Ã©, '; }
+    elseif ($pogoda['wind']['deg'] > 191.25 && $pogoda['wind']['deg'] <= 258.75) { $wind_direction = 'Ã¾Ã£Ã®-Ã§Ã Ã¯Ã Ã¤Ã­Ã»Ã©, '; }
+    elseif ($pogoda['wind']['deg'] > 258.75 && $pogoda['wind']['deg'] <= 281.25) { $wind_direction = 'Ã§Ã Ã¯Ã Ã¤Ã­Ã»Ã©, '; }
+    elseif ($pogoda['wind']['deg'] > 281.25 && $pogoda['wind']['deg'] <= 348.75) { $wind_direction = 'Ã±Ã¥Ã¢Ã¥Ã°Ã®-Ã§Ã Ã¯Ã Ã¤Ã­Ã»Ã©, '; }
     else { $wind_direction = ' '; }
-    // Ôîðìèðîâàíèå îòâåòà.
-    $weather_text = 'Ñåé÷àñ ' . $weather_type . '. Òåìïåðàòóðà âîçäóõà: ' . $temperature . '°C. Âåòåð ' . $wind_direction . sprintf("%u", $pogoda['wind']['speed']) . ' ì/ñåê.';
-    // Îòïðàâêà îòâåòà ïîëüçîâàòåëþ Telegram.
+    // Ã”Ã®Ã°Ã¬Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã®Ã²Ã¢Ã¥Ã²Ã .
+    $weather_text = 'Ã‘Ã¥Ã©Ã·Ã Ã± ' . $weather_type . '. Ã’Ã¥Ã¬Ã¯Ã¥Ã°Ã Ã²Ã³Ã°Ã  Ã¢Ã®Ã§Ã¤Ã³ÃµÃ : ' . $temperature . 'Â°C. Ã‚Ã¥Ã²Ã¥Ã° ' . $wind_direction . sprintf("%u", $pogoda['wind']['speed']) . ' Ã¬/Ã±Ã¥Ãª.';
+    // ÃŽÃ²Ã¯Ã°Ã Ã¢ÃªÃ  Ã®Ã²Ã¢Ã¥Ã²Ã  Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¥Ã«Ã¾ Telegram.
     sendMessage($chat_id, $weather_text);
     break;
   default:
@@ -71,7 +71,7 @@ switch($message) {
 }
 
 /**
- * Ôóíêöèÿ îòïðàâêè ñîîáùåíèÿ sendMessage().
+ * Ã”Ã³Ã­ÃªÃ¶Ã¨Ã¿ Ã®Ã²Ã¯Ã°Ã Ã¢ÃªÃ¨ Ã±Ã®Ã®Ã¡Ã¹Ã¥Ã­Ã¨Ã¿ sendMessage().
  */
 function sendMessage($chat_id, $message) {
   file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message));
