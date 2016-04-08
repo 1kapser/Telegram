@@ -8,12 +8,7 @@
     ],
     "homepage": "https://github.com/1kapser/Telegram",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Serg",
-        }
-    ],
-    "support": {
+        "support": {
         "issues": "https://github.com/1kapser/Telegram/issues",
         "source": "https://github.com/1kapser/Telegram"
     }
