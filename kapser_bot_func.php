@@ -4,7 +4,7 @@
  */
 $access_token = '217117994:AAEC_vlWicWGVm0H973Z2XEjvevoInmy4cs';
 $api = 'https://api.telegram.org/bot' . $access_token;
-
+$BOT_NAME = 'kapser_bot';
 /**
  * Çàäà¸ì îñíîâíûå ïåðåìåííûå.
  */
