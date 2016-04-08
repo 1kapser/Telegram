@@ -1,6 +1,6 @@
 <?php
-$bot_id = 'AAEC_vlWicWGVm0H973Z2XEjvevoInmy4cs';
-$chat_id ='217117994';
+$bot_id = 'AAH7GEHZZNE5mr3ABQT0X3BZ5ezIGi2rTQg';
+$chat_id ='195600014';
 $url = 'https://api.telegram.org/bot' . $bot_id .
 
 '/sendMessage?text='.urlencode($text).
