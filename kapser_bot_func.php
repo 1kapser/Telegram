@@ -1,3 +1,4 @@
+<?php
 $bot_id = 'AAEC_vlWicWGVm0H973Z2XEjvevoInmy4cs';
 $chat_id ='217117994';
 $url = 'https://api.telegram.org/bot' . $bot_id .
