@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "1kapser\\Telegram\\Bot\\": ""
+            "1kapser\\Telegram\\": ""
         }
     }
 }
