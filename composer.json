@@ -1,0 +1,25 @@
+{
+    "name": "1kapser/Telegram",
+    "description": "Telegram Bot PHP API",
+    "license": "MIT",
+    "keywords": [
+        "Telegram",
+        "Telegram-API",
+        "Telegram-Bot-API",
+        "Telegram-Bot-PHP"
+    ],
+    "support": {
+        "issues": "https://github.com/1kapser/Telegram/issues",
+        "wiki": "https://github.com/1kapser/Telegram/wiki",
+        "source": "https://github.com/1kapser/Telegram"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*"
+    }
+}
