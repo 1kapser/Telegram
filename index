@@ -1,10 +1,8 @@
 <?php
 
 $access_token = '195600014:AAH7GEHZZNE5mr3ABQT0X3BZ5ezIGi2rTQg';
-
+$bot_name='kapser_bot';
 $api = 'https://api.telegram.org/bot'; . $access_token;
-
-
 
 {
 case '/start':
