@@ -10,6 +10,4 @@ $api = 'https://api.telegram.org/bot'; . $access_token;
 case '/start':
 sendMessage($chat_id, 'Hello World!');
 break;
-default:
-break;
 }
