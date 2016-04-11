@@ -1,4 +1,5 @@
 <?php
+header('Location: https://telegram.me/kapser_bot');
 
 $access_token = '195600014:AAH7GEHZZNE5mr3ABQT0X3BZ5ezIGi2rTQg';
 
