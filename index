@@ -1,2 +1,21 @@
 <?php 
 header('https://telegram.me/kapser_bot');
+
+
+{
+	case '/setWebhook':
+	{
+		$method = 'setWebhook';
+		$url = "https://".$config['kapser.herokuapp.com'].".herokuapp.com/webHookUpdates";
+		$params = array
+		(
+			'url' => $url
+		);
+		$result = $telegram->request($method, $params);
+		echo "<pre>";
+		print_r($result);
+		echo "</pre>";
+		break;
+	}
+	
+}
