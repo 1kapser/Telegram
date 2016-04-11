@@ -6,7 +6,7 @@ $api = 'https://api.telegram.org/bot' . $access_token;
 
 // User profile link on your Drupal site.
 
-$user_profile_url = 'https://kapser.herokuapp.com';
+$user_profile_url = 'https://kapser.herokuapp.com/index.php';
 // Listen commands from users to bot.
 
 $output = json_decode(file_get_contents('php://input'), TRUE);
