@@ -1,17 +1,2 @@
   {
-  
-    "name": "1kapser/Telegram",
-    "description": "Telegram Bot",
-    "keywords": [
-        "telegram",
-        "bot",
-        "api"
-    ],
-    "homepage": "https://github.com/1kapser/Telegram",
-    "license": "MIT",
-        "support": {
-        "issues": "https://github.com/1kapser/Telegram/issues",
-        "source": "https://github.com/1kapser/Telegram"
-    }
-    
-}
+  }
