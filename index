@@ -2,11 +2,11 @@
 // Telegram Bot access token and API URL.
 $access_token = '195600014:AAH7GEHZZNE5mr3ABQT0X3BZ5ezIGi2rTQg';
 
-$api = 'https://kapser.herokuapp.com/' . $access_token;
+$api = 'https://api.telegram.org/bot' . $access_token;
 
 // User profile link on your Drupal site.
 
-$user_profile_url = 'http://example.com/user';
+$user_profile_url = 'https://kapser.herokuapp.com/';
 // Listen commands from users to bot.
 
 $output = json_decode(file_get_contents('php://input'), TRUE);
