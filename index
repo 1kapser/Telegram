@@ -4,8 +4,18 @@ $access_token = '195600014:AAH7GEHZZNE5mr3ABQT0X3BZ5ezIGi2rTQg';
 $bot_name='kapser_bot';
 $api = 'https://api.telegram.org/bot'; . $access_token;
 
-{
+$output = json_decode(file_get_contents('php://input'), TRUE);
+$chat_id = $output['message']['chat']['id'];
+$message = $output['message']['text'];
+
+switch($message) {
 case '/start':
 sendMessage($chat_id, 'Hello World!');
 break;
+default:
+break;
+}
+
+function sendMessage($chat_id, $message) {
+file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message));
 }
