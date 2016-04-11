@@ -1,35 +1,21 @@
 <?php
-// Telegram Bot access token and API URL.
+
 $access_token = '195600014:AAH7GEHZZNE5mr3ABQT0X3BZ5ezIGi2rTQg';
 
-$api = 'https://api.telegram.org/bot' . $access_token;
-
-// User profile link on your Drupal site.
-
-$user_profile_url = 'https://kapser.herokuapp.com/index.php';
-// Listen commands from users to bot.
+$api = 'https://api.telegram.org/bot'; . $access_token;
 
 $output = json_decode(file_get_contents('php://input'), TRUE);
-
-
-// Set chat ID, first name and message.
 $chat_id = $output['message']['chat']['id'];
-$first_name = $output['message']['chat']['first_name'];
-$text = $output['message']['text'];
-// Set response.
-switch($text) {
-  // Command '/start'.
-  case '/start':
-    // Text to send.
-    $send_message = 'Hello, ' . $first_name . '! Your Telegram chat ID is: *' . $chat_id . '*. Enter this code in your profile on ' . $user_profile_url . '.';
-    // Send message to Telegram user.
-    sendTelegramMessage($chat_id, $send_message);
-    break;
-  // Default.
-  default:
-    break;
+$message = $output['message']['text'];
+
+switch($message) {
+case '/start':
+sendMessage($chat_id, 'Hello World!');
+break;
+default:
+break;
 }
-// Function sendTelegramMessage().
-function sendTelegramMessage($chat_id, $message) {
-  file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message));
+
+function sendMessage($chat_id, $message) {
+file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message));
 }
