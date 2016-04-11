@@ -12,10 +12,7 @@
         "issues": "https://github.com/1kapser/Telegram/issues",
         "wiki": "https://github.com/1kapser/Telegram/wiki",
         "source": "https://github.com/1kapser/Telegram"
-    },
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
+   
+
        }
 }
